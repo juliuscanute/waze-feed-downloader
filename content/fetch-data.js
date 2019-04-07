@@ -38,7 +38,7 @@ function wDDLoadData(offset) {
                 }
                 const blob = new Blob([response], {type: 'text/csv'});
                 a.href = window.URL.createObjectURL(blob);
-                a.download = 'feeds';
+                a.download = 'feeds.csv';
                 a.style.display = 'none';
                 document.body.appendChild(a);
                 a.click();
