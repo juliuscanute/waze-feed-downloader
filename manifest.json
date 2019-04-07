@@ -1,0 +1,29 @@
+{
+	"manifest_version": 2,
+	"name": "Waze Feed Downloader",
+	"version": "1.0.0",
+	"description": "Download Feeds",
+	"icons":
+	{
+		"16": "img/icon.png",
+		"48": "img/icon.png",
+		"128": "img/icon.png"
+	},
+	"page_action":
+	{
+		"default_icon": "img/icon.png",
+		"default_title": "Waze",
+		"default_popup": "popup.html"
+	},
+	"permissions":
+	[
+		"declarativeContent",
+		"downloads",
+		"storage",
+		"https://www.waze.com/"
+	],
+	"background":
+	{
+		"scripts": ["js/background.js"]
+	}
+}
