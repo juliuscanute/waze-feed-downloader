@@ -31,10 +31,10 @@ function wDDLoadData(offset) {
             }
             if (offset + 50 >= wDDTotalDrives) {
                 let a = document.createElement('a');
-                let response = "userId,totalRoadMeters,startTime,endTime\n";
+                let response = "userId,totalMiles,startTime(YYYYMMDD),endTime(YYYYMMDD)\n";
                 for (i = 0; i < wDDTotalDrives; i++) {
-                    response += wDDDrivesDataArr[i].userID+","+wDDDrivesDataArr[i].totalRoadMeters
-                        +","+moment(wDDDrivesDataArr[i].startTime).format('LLL')+","+moment(wDDDrivesDataArr[i].endTime).format('LLL')+"\n";
+                    response += wDDDrivesDataArr[i].userID+","+(Number(wDDDrivesDataArr[i].totalRoadMeters)*0.000621371)
+                        +","+moment(wDDDrivesDataArr[i].startTime).format('YYYYMMDD')+","+moment(wDDDrivesDataArr[i].endTime).format('YYYYMMDD')+"\n";
                 }
                 const blob = new Blob([response], {type: 'text/csv'});
                 a.href = window.URL.createObjectURL(blob);
